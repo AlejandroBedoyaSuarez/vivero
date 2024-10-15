@@ -1,1 +1,9 @@
 @import url(font-awesome/css/fontawesome-all.css);
+/*Para titulos*/
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
+/*Para textos normales h3 para abajo*/
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/*Para los links*/
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Caveat:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/*Para el footer*/
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Caveat:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yellowtail&display=swap');

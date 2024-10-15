@@ -1,168 +1,283 @@
-/* Tamaño del contenido de toda la pagina*/
+/*Estilo global para el contenido de toda la página*/
 html {
     font-size: 14px;
-    margin-left: 15px;
-    margin-right: 15px;
+    /*Define el tamaño base de fuente en 14px*/
+    margin: 0 15px;
+    /*Establece un margen de 15px en los lados*/
 }
 
-/*voy a usar mediasquery para hacer adaptable la letra a un dispositivo diferente*/
-@media screen and(max-width:500px) {
+/*Media query para pantallas pequeñas (máximo 500px de ancho)*/
+@media (max-width: 500px) {
     html {
-        font-size: 9.41176rem;
-        flex-direction: column;
-        display: flexbox;
-        text-align: center;
-
+        font-size: 12px;
+        /*Reduce el tamaño de la fuente a 12px en pantallas pequeñas*/
     }
-/*Cambia una columna a una sola pantalla*/
-    html, body{
-        font-size: 9.41176px;
-        flex-direction: column;
-    }
-
-
-    html, body, a{
-        font-size: 9.41176px;
-        flex-direction: column;   
-    }
-    
-    html, body, .s-header {
-
-            font-size: 9.41176px;
-            flex-direction: column;
-            display: flex;
-    }
-
-
-
 }
-@media screen and (max-width: 400px){
 
-};
-    
-
-/*Los elementos del heigth usaran el 100% de sus contenedores*/
+/*HTML y body ocupan el 100% del alto del viewport*/
 html,
 body {
     height: 100%;
 }
 
-/*Se cambiara tanto el tipo de letra, tambien el color del fondo*/
+/*Estilos para el cuerpo de la página*/
 body {
-    background: #86f8cd;
-    /*Seleccionar el tipo de letra en funcion al codio en base*/
-    font-family: 'Times New Roman', Times, serif ;
-    /*La etiqueta rem va a coger el tamaño padre que es 16px y lo multiplicara por 1.7*/
+    background: #3d886b;
+    /*Fondo verde claro*/
+    font-family: 'Times New Roman', Times, serif;
+    /*Fuente serif clásica*/
     font-size: 1.7rem;
+    /*Tamaño de fuente calculado: 14px * 1.7 = 27.2px*/
     font-style: normal;
-    /*Hace a la letra un poco mas ancha*/
     font-weight: normal;
-    /*Es el ancho que existe entre los espacios de las palabras o sangria*/
     line-height: 1.882;
+    /*Espaciado entre líneas*/
     color: black;
-    /*Le va a dar un margen desde el interior de un contenedor hacia el exterior*/
     margin: 0;
-    /*Le va a dar un margen desde el exterior hacia el interior del contenedor*/
     padding: 12px;
+    /*Relleno dentro del cuerpo*/
 }
 
-/*Estilos a los links*/
+/*Ajustes de fuente para pantallas pequeñas*/
+@media (max-width: 500px) {
+    body {
+        font-size: 1rem;
+        /*Tamaño más pequeño para mejorar la legibilidad en pantallas móviles*/
+    }
+}
+
+/*Estilos para los enlaces*/
 a {
-    color: #2173ee;
+    color: #dd3ad5;
+    /*Color inicial del enlace*/
     transition: all 0.3s ease-in-out;
+    /* Transición suave de 0.3s en los estilos */
 }
 
-/*Transicion de estilos para los links*/
 a:hover,
-/*Le genera un pequeño brillo*/
 a:focus,
-/*se activa la función del brillo*/
 a:active {
-    color: rgb(7, 253, 7);
+    color: rgb(212, 48, 19);
+    /*Cambio de color al interactuar con el enlace*/
 }
- /*Aquì modificamos el h1 para que sea 32px de grande, familia agdasima, 255 de weight, sea cursiva, sea negrilla, alineada al centro y todo en mayùsculas*/
- h1 {
-    font-size: 32px;
-    font-family: Agdasima;
-    font-weight: 500;
-    font-style: italic;
+
+/*Estilos para el encabezado principal (h1)*/
+h1 {
+    font-size: 2rem;
+    font-family: sans-serif;
     font-weight: bold;
+    font-style: italic;
     text-align: center;
     text-transform: uppercase;
+    /*Convierte el texto a mayúsculas*/
+}
 
- }
-  /*Aquì modificamos el h2 para que sea 32px de grande, familia agdasima, 255 de weight, sea cursiva, sea negrilla, alineada al centro y todo en mayùsculas*/
+/*Estilos para el segundo encabezado (h2)*/
 h2 {
     font-size: 27px;
     font-family: Agdasima;
-    font-weight: 500;
+    /*Fuente personalizada*/
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-    
 }
 
-.s-header{
-    position: relative ;
-    /*De arriva para abajo*/
+/*Estilos para los párrafos*/
+p {
+    font-size: 16px;
+    font-family: 'Josefin';
+    /* Fuente 'Josefin' */
+    font-weight: normal;
+    text-align: left;
+    /*Alineación a la izquierda*/
+}
+
+/*Estilos para el encabezado principal (header)*/
+.s-header {
+    position: relative;
     top: 2rem;
-    /*De derecha a la izquierda*/
-    right:0 ;
-    /*De izquierda a la derecha*/
-    left:0;
-    /*De abajo para arriva*/
-    bottom:0;
+    /*Mueve el encabezado 2 rem hacia abajo*/
     width: 100%;
     border: 1px solid white;
     height: 78px;
+    /*Altura fija del encabezado*/
     text-align: center;
 }
-.s-header.sticky{
+
+/*Encabezado pegajoso (sticky), que permanece fijo al hacer scroll*/
+.s-header.sticky {
     background: #050505;
+    /* Fondo negro */
     position: fixed;
     top: 0;
-    left:0; 
+    /*Fijado en la parte superior de la página*/
+    left: 0;
+    /*Alineado a la izquierda*/
 }
-.header-logo{
-    display: inline-block;
-    margin: 6px 0;
-    position: absolute;
-    top: 50%;
-    left: 40px;
+
+/*Contenedor principal de navegación*/
+.header-nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    /*Distribuye los elementos de navegación*/
+    align-items: center;
+    /*Alinea los elementos verticalmente*/
+    padding: 0 20px;
+    /*Espacio horizontal dentro del contenedor*/
 }
-.header-logo a{
-    display: block;
-    margin :0;
-    padding: 0;
-    outline: 0;
-    border: none;
-    transition: all .3s;
-}
-.header-logo img{
-    width: 132px;
-    height: 36px;
-    margin: 0;
-}
-.header-nav-wrap{
-    display: inline-block;
-}
-.header-nav-wrap ul{
-    display: inline-block;
+
+/* Lista de navegación */
+.header-nav-wrap ul {
+    display: flex;
+    /*Los enlaces aparecen en línea*/
+    gap: 30px;
+    /*Espacio entre cada enlace*/
     list-style: none;
-    margin-left: 0;
-    margin-top: 18px;
-}
-.header-nav-wrap li{
-    display: inline-block;
+    /* Sin viñetas en la lista */
+    margin: 0;
+    /*Sin márgenes*/
     padding: 0;
+    /*Sin padding*/
 }
-.header-nav-wrap li a{
+
+/*Estilos para los enlaces dentro de la lista de navegación*/
+.header-nav-wrap li a {
     display: block;
+    /*Los enlaces ocupan todo el espacio del elemento <li>*/
     line-height: calc(78px-(18px*2));
+    /*Ajusta la altura de línea para centrar el texto*/
 }
 
+/*Estilos para la navegación en pantallas pequeñas*/
+@media (max-width: 500px) {
+    .header-nav-wrap ul {
+        flex-direction: column;
+        /*Cambia la dirección a columna en pantallas pequeñas*/
+        text-align: center;
+    }
+}
 
+/*Estilos para los iconos de redes sociales*/
+.header-social {
+    display: flex;
+    /* Alinea los iconos en una línea */
+    gap: 15px;
+    /* Espacio entre los iconos */
+}
 
+/*Tamaño de los iconos de redes sociales*/
+.header-social a {
+    font-size: 1.5rem;
+    /* Tamaño del icono */
+}
 
+/*Estilos para los enlaces al pasar el ratón por encima*/
+.header-nav-wrap li a:hover,
+.header-social a:hover {
+    color: rgb(212, 48, 19);
+    /*Cambio de color al pasar el ratón*/
+}
 
+/*Ajustes para la navegación en pantallas medianas*/
+@media (max-width: 768px) {
+    .header-nav-wrap {
+        flex-direction: column;
+        /*Cambia la disposición a columna*/
+        align-items: center;
+        /*Alinea los elementos al centro*/
+    }
 
+    .header-nav-wrap ul {
+        gap: 15px;
+        /*Menor espacio entre los enlaces en pantallas medianas*/
+    }
+}
+
+/*Estilos para la sección de introducción*/
+.Introducción {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para la sección "Acerca de nosotros" */
+.about-us {
+    background: #dff3e3;
+    /* Fondo verde claro */
+    padding: 20px;
+}
+
+.about-us img {
+    max-width: 100%;
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    margin-top: 15px;
+}
+
+/* Estilos para la sección de actividades */
+.do-it {
+    background: #f7f7f7;
+    padding: 20px;
+}
+
+.do-it ul {
+    padding-left: 20px;
+    /* Espacio a la izquierda de la lista */
+}
+
+.do-it img {
+    max-width: 100%;
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    margin-top: 15px;
+}
+
+/* Estilos para la sección de contacto */
+.Contact {
+    background: #e3f2fd;
+    /* Fondo azul claro */
+    padding: 20px;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background: #050505;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Caveat';
+    /* Fuente del pie de página */
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Ajustes generales para pantallas pequeñas */
+@media (max-width: 500px) {
+
+    h1,
+    h2 {
+        font-size: 1.5rem;
+        /* Reduce el tamaño de los encabezados */
+    }
+
+    p {
+        font-size: 14px;
+        /* Reduce el tamaño del texto en párrafos */
+    }
+
+    .header-logo img {
+        width: 100px;
+        height: 28px;
+        /* Tamaño ajustado de los logos en pantallas pequeñas */
+    }
+
+    .s-header {
+        height: auto;
+        /* Ajusta la altura del encabezado */
+        padding: 10px 0;
+        /* Reduce el relleno */
+    }
+}
