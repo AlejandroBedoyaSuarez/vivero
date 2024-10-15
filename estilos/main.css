@@ -1,0 +1,168 @@
+/* Tamaño del contenido de toda la pagina*/
+html {
+    font-size: 14px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/*voy a usar mediasquery para hacer adaptable la letra a un dispositivo diferente*/
+@media screen and(max-width:500px) {
+    html {
+        font-size: 9.41176rem;
+        flex-direction: column;
+        display: flexbox;
+        text-align: center;
+
+    }
+/*Cambia una columna a una sola pantalla*/
+    html, body{
+        font-size: 9.41176px;
+        flex-direction: column;
+    }
+
+
+    html, body, a{
+        font-size: 9.41176px;
+        flex-direction: column;   
+    }
+    
+    html, body, .s-header {
+
+            font-size: 9.41176px;
+            flex-direction: column;
+            display: flex;
+    }
+
+
+
+}
+@media screen and (max-width: 400px){
+
+};
+    
+
+/*Los elementos del heigth usaran el 100% de sus contenedores*/
+html,
+body {
+    height: 100%;
+}
+
+/*Se cambiara tanto el tipo de letra, tambien el color del fondo*/
+body {
+    background: #86f8cd;
+    /*Seleccionar el tipo de letra en funcion al codio en base*/
+    font-family: 'Times New Roman', Times, serif ;
+    /*La etiqueta rem va a coger el tamaño padre que es 16px y lo multiplicara por 1.7*/
+    font-size: 1.7rem;
+    font-style: normal;
+    /*Hace a la letra un poco mas ancha*/
+    font-weight: normal;
+    /*Es el ancho que existe entre los espacios de las palabras o sangria*/
+    line-height: 1.882;
+    color: black;
+    /*Le va a dar un margen desde el interior de un contenedor hacia el exterior*/
+    margin: 0;
+    /*Le va a dar un margen desde el exterior hacia el interior del contenedor*/
+    padding: 12px;
+}
+
+/*Estilos a los links*/
+a {
+    color: #2173ee;
+    transition: all 0.3s ease-in-out;
+}
+
+/*Transicion de estilos para los links*/
+a:hover,
+/*Le genera un pequeño brillo*/
+a:focus,
+/*se activa la función del brillo*/
+a:active {
+    color: rgb(7, 253, 7);
+}
+ /*Aquì modificamos el h1 para que sea 32px de grande, familia agdasima, 255 de weight, sea cursiva, sea negrilla, alineada al centro y todo en mayùsculas*/
+ h1 {
+    font-size: 32px;
+    font-family: Agdasima;
+    font-weight: 500;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+
+ }
+  /*Aquì modificamos el h2 para que sea 32px de grande, familia agdasima, 255 de weight, sea cursiva, sea negrilla, alineada al centro y todo en mayùsculas*/
+h2 {
+    font-size: 27px;
+    font-family: Agdasima;
+    font-weight: 500;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+.s-header{
+    position: relative ;
+    /*De arriva para abajo*/
+    top: 2rem;
+    /*De derecha a la izquierda*/
+    right:0 ;
+    /*De izquierda a la derecha*/
+    left:0;
+    /*De abajo para arriva*/
+    bottom:0;
+    width: 100%;
+    border: 1px solid white;
+    height: 78px;
+    text-align: center;
+}
+.s-header.sticky{
+    background: #050505;
+    position: fixed;
+    top: 0;
+    left:0; 
+}
+.header-logo{
+    display: inline-block;
+    margin: 6px 0;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+}
+.header-logo a{
+    display: block;
+    margin :0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    transition: all .3s;
+}
+.header-logo img{
+    width: 132px;
+    height: 36px;
+    margin: 0;
+}
+.header-nav-wrap{
+    display: inline-block;
+}
+.header-nav-wrap ul{
+    display: inline-block;
+    list-style: none;
+    margin-left: 0;
+    margin-top: 18px;
+}
+.header-nav-wrap li{
+    display: inline-block;
+    padding: 0;
+}
+.header-nav-wrap li a{
+    display: block;
+    line-height: calc(78px-(18px*2));
+}
+
+
+
+
+
+
